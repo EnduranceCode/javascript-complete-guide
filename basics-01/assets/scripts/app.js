@@ -2,9 +2,12 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
 
+function getUserNumberInput() {
+  return parseInt(userInput.value);
+}
 function add() {
-  const calculationDescription = `${currentResult} + ${userInput.value}`;
-  currentResult = currentResult + parseInt(userInput.value);
+  const calculationDescription = `${currentResult} + ${getUserNumberInput()}`;
+  currentResult = currentResult + getUserNumberInput();
   outputResult(currentResult, calculationDescription);
 }
 
