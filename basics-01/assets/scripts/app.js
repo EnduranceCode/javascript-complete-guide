@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const defaultResult = 0;
 let currentResult = defaultResult;
+let logEntries = [];
 
 function getUserNumberInput() {
   return parseInt(userInput.value);
@@ -9,6 +10,8 @@ function getUserNumberInput() {
 function createDescriptionAndOutputResult(operator, resultBeforeCalculation, userInputNumber) {
   const calculationDescription = `${resultBeforeCalculation} ${operator} ${userInputNumber}`;
   outputResult(currentResult, calculationDescription);
+  logEntries.push(userInputNumber);
+  console.log(logEntries);
 }
 
 function add() {
