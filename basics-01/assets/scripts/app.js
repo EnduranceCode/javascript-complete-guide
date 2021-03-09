@@ -16,7 +16,7 @@ function add() {
   const userInputNumber = getUserNumberInput();
 
   const OPERATOR = '+';
-  currentResult = resultBeforeCalculation + userInputNumber;
+  currentResult += userInputNumber;
   createDescriptionAndOutputResult(OPERATOR, resultBeforeCalculation, userInputNumber);
 }
 
@@ -25,7 +25,7 @@ function subtract() {
   const userInputNumber = getUserNumberInput();
 
   const OPERATOR = '-';
-  currentResult = resultBeforeCalculation - userInputNumber;
+  currentResult -= userInputNumber;
   createDescriptionAndOutputResult(OPERATOR, resultBeforeCalculation, userInputNumber);
 }
 
@@ -34,7 +34,7 @@ function multiply() {
   const userInputNumber = getUserNumberInput();
 
   const OPERATOR = '*';
-  currentResult = resultBeforeCalculation * userInputNumber;
+  currentResult *= userInputNumber;
   createDescriptionAndOutputResult(OPERATOR, resultBeforeCalculation, userInputNumber);
 }
 
@@ -43,7 +43,7 @@ function divide() {
   const userInputNumber = getUserNumberInput();
 
   const OPERATOR = '/';
-  currentResult = resultBeforeCalculation / userInputNumber;
+  currentResult /= userInputNumber;
   createDescriptionAndOutputResult(OPERATOR, resultBeforeCalculation, userInputNumber);
 }
 
