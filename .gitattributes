@@ -1,5 +1,0 @@
-# https://medium.com/@csmunuku/windows-and-linux-eol-sequence-configure-vs-code-and-git-37be98ef71df
-# https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings#per-repository-settings
-
-# Declare text files to always have LF line endings on checkout.
-text eol=lf
