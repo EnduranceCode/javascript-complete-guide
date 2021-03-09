@@ -1,12 +1,11 @@
+/* eslint-disable no-undef */
 const defaultResult = 0;
 let currentResult = defaultResult;
 
 function add() {
-  // eslint-disable-next-line no-undef
+  const calculationDescription = `${currentResult} + ${userInput.value}`;
   currentResult = currentResult + parseInt(userInput.value);
-  // eslint-disable-next-line no-undef
-  outputResult(currentResult, '');
+  outputResult(currentResult, calculationDescription);
 }
 
-// eslint-disable-next-line no-undef
 addBtn.addEventListener('click', add);
