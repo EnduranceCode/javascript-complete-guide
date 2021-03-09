@@ -3,7 +3,7 @@ let currentResult = defaultResult;
 
 function add() {
   // eslint-disable-next-line no-undef
-  currentResult = currentResult + userInput.value;
+  currentResult = currentResult + parseInt(userInput.value);
   // eslint-disable-next-line no-undef
   outputResult(currentResult, '');
 }
