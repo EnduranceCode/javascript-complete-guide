@@ -18,6 +18,7 @@ function createDescriptionAndOutputResult(operator, resultBeforeCalculation, use
     finalResult: currentResult,
   };
   logEntries.push(logEntry);
+  logEntry.operator;
   console.log(logEntries);
 }
 
