@@ -26,12 +26,13 @@ function writeToLog(operator, resultBeforeCalculation, userInputNumber, currentR
 }
 
 function claculateResult(operator) {
-  if (operator !== '+' && operator !== '-' && operator !== '*' && operator !== '/') {
+  const userInputNumber = getUserNumberInput();
+
+  if ((operator !== '+' && operator !== '-' && operator !== '*' && operator !== '/') || !userInputNumber) {
     return;
   }
 
   const resultBeforeCalculation = currentResult;
-  const userInputNumber = getUserNumberInput();
 
   if (operator === '+') {
     currentResult += userInputNumber;
