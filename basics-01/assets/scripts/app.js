@@ -10,7 +10,10 @@ function getUserNumberInput() {
 function createDescriptionAndOutputResult(operator, resultBeforeCalculation, userInputNumber) {
   const calculationDescription = `${resultBeforeCalculation} ${operator} ${userInputNumber}`;
   outputResult(currentResult, calculationDescription);
+  writeToLog(operator, resultBeforeCalculation, userInputNumber, currentResult);
+}
 
+function writeToLog(operator, resultBeforeCalculation, userInputNumber, currentResult) {
   const logEntry = {
     operator: operator,
     initialResult: resultBeforeCalculation,
@@ -18,7 +21,7 @@ function createDescriptionAndOutputResult(operator, resultBeforeCalculation, use
     finalResult: currentResult,
   };
   logEntries.push(logEntry);
-  logEntry.operator;
+  console.log(logEntry.operator);
   console.log(logEntries);
 }
 
