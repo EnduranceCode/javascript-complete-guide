@@ -1,0 +1,18 @@
+{
+  "name": "monster-killer",
+  "version": "1.0.0",
+  "description": "Code written following the course \"JavaScript - The Complete Guide 2021\"",
+  "main": "./assets/scripts/vendor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "EnduranceCode",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "2.2.1"
+  }
+}
