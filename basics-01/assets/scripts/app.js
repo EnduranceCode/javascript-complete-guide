@@ -25,22 +25,27 @@ function writeToLog(operator, resultBeforeCalculation, userInputNumber, currentR
   console.log(logEntries);
 }
 
-function add() {
+function claculateResult(operator) {
   const resultBeforeCalculation = currentResult;
   const userInputNumber = getUserNumberInput();
 
+  if (operator === '+') {
+    currentResult += userInputNumber;
+    createDescriptionAndOutputResult(operator, resultBeforeCalculation, userInputNumber);
+  } else {
+    currentResult -= userInputNumber;
+    createDescriptionAndOutputResult(operator, resultBeforeCalculation, userInputNumber);
+  }
+}
+
+function add() {
   const OPERATOR = '+';
-  currentResult += userInputNumber;
-  createDescriptionAndOutputResult(OPERATOR, resultBeforeCalculation, userInputNumber);
+  claculateResult(OPERATOR);
 }
 
 function subtract() {
-  const resultBeforeCalculation = currentResult;
-  const userInputNumber = getUserNumberInput();
-
   const OPERATOR = '-';
-  currentResult -= userInputNumber;
-  createDescriptionAndOutputResult(OPERATOR, resultBeforeCalculation, userInputNumber);
+  claculateResult(OPERATOR);
 }
 
 function multiply() {
