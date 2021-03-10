@@ -31,11 +31,15 @@ function claculateResult(operator) {
 
   if (operator === '+') {
     currentResult += userInputNumber;
-    createDescriptionAndOutputResult(operator, resultBeforeCalculation, userInputNumber);
-  } else {
+  } else if (operator === '-') {
     currentResult -= userInputNumber;
-    createDescriptionAndOutputResult(operator, resultBeforeCalculation, userInputNumber);
+  } else if (operator === '*') {
+    currentResult *= userInputNumber;
+  } else if (operator === '/') {
+    currentResult /= userInputNumber;
   }
+
+  createDescriptionAndOutputResult(operator, resultBeforeCalculation, userInputNumber);
 }
 
 function add() {
@@ -49,21 +53,13 @@ function subtract() {
 }
 
 function multiply() {
-  const resultBeforeCalculation = currentResult;
-  const userInputNumber = getUserNumberInput();
-
   const OPERATOR = '*';
-  currentResult *= userInputNumber;
-  createDescriptionAndOutputResult(OPERATOR, resultBeforeCalculation, userInputNumber);
+  claculateResult(OPERATOR);
 }
 
 function divide() {
-  const resultBeforeCalculation = currentResult;
-  const userInputNumber = getUserNumberInput();
-
   const OPERATOR = '/';
-  currentResult /= userInputNumber;
-  createDescriptionAndOutputResult(OPERATOR, resultBeforeCalculation, userInputNumber);
+  claculateResult(OPERATOR);
 }
 
 addBtn.addEventListener('click', add);
