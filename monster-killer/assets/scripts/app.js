@@ -153,8 +153,8 @@ function writeToLog(event, value, monsterHealth, playerHealth) {
 }
 
 function printLogHandler() {
-  for (let i = 0; i < battleLog.length; i++) {
-    console.log(battleLog[i]);
+  for (const element of battleLog) {
+    console.log(element);
   }
 }
 
