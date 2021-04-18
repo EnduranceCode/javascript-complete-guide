@@ -15,6 +15,7 @@ const LOG_EVENT_GAME_OVER = 'GAME_OVER';
 const enteredValue = prompt('Maximum life for you and the monster?', '100');
 let chosenMaxLife = parseInt(enteredValue);
 let battleLog = [];
+let lastLoggedEntry;
 
 if (isNaN(chosenMaxLife) || chosenMaxLife <= 0) {
   chosenMaxLife = 100;
@@ -155,10 +156,14 @@ function writeToLog(event, value, monsterHealth, playerHealth) {
 function printLogHandler() {
   let index = 0;
   for (const logEntry of battleLog) {
-    console.log(`#${index}`);
+    if ((!lastLoggedEntry && lastLoggedEntry !== 0) || lastLoggedEntry < index) {
+      console.log(`#${index}`);
 
-    for (const key in logEntry) {
-      console.log(`${key}: ${logEntry[key]}`);
+      for (const key in logEntry) {
+        console.log(`${key}: ${logEntry[key]}`);
+      }
+      lastLoggedEntry = index;
+      break;
     }
     index++;
   }
