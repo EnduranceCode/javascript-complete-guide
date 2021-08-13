@@ -18,6 +18,21 @@ const getPlayerChoice = function () {
   return selection;
 };
 
+const getComputerChoice = function () {
+  const randomNumber = Math.random();
+  let selection;
+
+  if (randomNumber <= 1 / 3) {
+    selection = ROCK;
+  } else if (randomNumber <= 2 / 3) {
+    selection = PAPER;
+  } else {
+    selection = SCISSORS;
+  }
+
+  return selection;
+};
+
 startGameBtn.addEventListener('click', function startGame() {
   if (gameIsRunning) {
     return;
@@ -27,5 +42,7 @@ startGameBtn.addEventListener('click', function startGame() {
   console.log('Game is starting..');
 
   const playerSelection = getPlayerChoice();
-  console.log(playerSelection);
+  console.log("Player's selection is " + playerSelection);
+  const computerSelection = getComputerChoice();
+  console.log("Computer's selection is " + computerSelection);
 });
