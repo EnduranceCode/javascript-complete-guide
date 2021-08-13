@@ -16,7 +16,7 @@ const getPlayerChoice = () => {
 
   if (selection != ROCK && selection != PAPER && selection != SCISSORS) {
     alert(`Invalid choice! We chose ${DEFAULT_CHOICE} for you!`);
-    selection = DEFAULT_CHOICE;
+    selection = undefined;
   }
 
   return selection;
@@ -37,7 +37,7 @@ const getComputerChoice = () => {
   return selection;
 };
 
-const getResult = (playerSelection, computerSelection) => {
+const getResult = (computerSelection, playerSelection = DEFAULT_CHOICE) => {
   let result;
 
   switch (playerSelection) {
@@ -106,9 +106,15 @@ startGameBtn.addEventListener('click', () => {
 
   const playerSelection = getPlayerChoice();
   const computerSelection = getComputerChoice();
-  const result = getResult(playerSelection, computerSelection);
 
-  let message = `You picked ${playerSelection}, computer picked ${computerSelection}, therefore you `;
+  let result;
+  if (playerSelection) {
+    result = getResult(computerSelection, playerSelection);
+  } else {
+    result = getResult(computerSelection);
+  }
+
+  let message = `You picked ${playerSelection || DEFAULT_CHOICE}, computer picked ${computerSelection}, therefore you `;
   switch (result) {
     case RESULT_DRAW:
       message = message + 'draw.';
