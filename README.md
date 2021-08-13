@@ -20,6 +20,10 @@ The folder [`basics-01`](./basics-01) of this repository contains the code writt
 
 The folder [`monster-killer`](./monster-killer) of this repository contains the code written while working through Lesson 83 to Lesson 110 (Section 4) of the course.
 
+### Functions 01
+
+The folder [`functions-01`](./functions-01) of this repository contains the code written while working through the firts Functions project of the course.
+
 ## Assignements
 
 ### Assignement 01
