@@ -135,7 +135,7 @@ startGameBtn.addEventListener('click', () => {
 });
 
 // Rest Operator and Functions inside Functions Code
-const sumUp = (...numbers) => {
+const sumUp = (resultHandler, ...numbers) => {
   const validateNumber = (number) => {
     return isNaN(number) ? 0 : number;
   };
@@ -145,7 +145,7 @@ const sumUp = (...numbers) => {
     sum += validateNumber(element);
   }
 
-  return sum;
+  return resultHandler(sum);
 };
 
 const subtractUp = function () {
@@ -158,10 +158,14 @@ const subtractUp = function () {
   return subtraction;
 };
 
+const showResult = (result) => {
+  alert('The result is ' + result);
+};
+
 console.log('# Rest Operator Code');
-console.log(sumUp(1, 5, 10, -3, 6, 10));
-console.log(sumUp(1, 5, 10, 'test', 6, 10));
-console.log(sumUp(1, 5, 10, -3, 6, 10, 25, 88));
+sumUp(showResult, 1, 5, 10, -3, 6, 10);
+sumUp(showResult, 1, 5, 10, 'test', 6, 10);
+sumUp(showResult, 1, 5, 10, -3, 6, 10, 25, 88);
 
 console.log(subtractUp(1, 5, 10, -3, 6, 10));
 console.log(subtractUp(1, 5, 10, -3, 6, 10, 25, 88));
