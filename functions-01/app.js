@@ -133,3 +133,30 @@ startGameBtn.addEventListener('click', () => {
   gameIsRunning = false;
   console.log('Game is stoped');
 });
+
+// Rest Operator Code
+const sumUp = (...numbers) => {
+  let sum = 0;
+  for (const element of numbers) {
+    sum += element;
+  }
+
+  return sum;
+};
+
+const subtractUp = function () {
+  let subtraction = 0;
+  // The use of "arguments" is not a good practice. Do not use it!
+  for (const element of arguments) {
+    subtraction -= element;
+  }
+
+  return subtraction;
+};
+
+console.log('# Rest Operator Code');
+console.log(sumUp(1, 5, 10, -3, 6, 10));
+console.log(sumUp(1, 5, 10, -3, 6, 10, 25, 88));
+
+console.log(subtractUp(1, 5, 10, -3, 6, 10));
+console.log(subtractUp(1, 5, 10, -3, 6, 10, 25, 88));
