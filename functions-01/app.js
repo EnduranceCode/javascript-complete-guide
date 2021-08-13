@@ -5,6 +5,10 @@ const PAPER = 'PAPER';
 const SCISSORS = 'SCISSORS';
 const DEFAULT_CHOICE = ROCK;
 
+const RESULT_DRAW = 'DRAW';
+const RESULT_PLAYER_WINS = 'PLAYER_WINS';
+const RESULT_COMPUTER_WINS = 'COMPUTER_WINS';
+
 let gameIsRunning = false;
 
 const getPlayerChoice = function () {
@@ -33,6 +37,65 @@ const getComputerChoice = function () {
   return selection;
 };
 
+const getResult = function (playerSelection, computerSelection) {
+  let result;
+
+  switch (playerSelection) {
+    case ROCK:
+      switch (computerSelection) {
+        case ROCK:
+          result = RESULT_DRAW;
+          break;
+        case PAPER:
+          result = RESULT_COMPUTER_WINS;
+          break;
+        case SCISSORS:
+          result = RESULT_PLAYER_WINS;
+          break;
+        default:
+          break;
+      }
+      break;
+
+    case PAPER:
+      switch (computerSelection) {
+        case ROCK:
+          result = RESULT_PLAYER_WINS;
+          break;
+        case PAPER:
+          result = RESULT_DRAW;
+          break;
+        case SCISSORS:
+          result = RESULT_COMPUTER_WINS;
+          break;
+        default:
+          break;
+      }
+      break;
+
+    case SCISSORS:
+      switch (computerSelection) {
+        case ROCK:
+          result = RESULT_COMPUTER_WINS;
+          break;
+        case PAPER:
+          result = RESULT_PLAYER_WINS;
+          break;
+        case SCISSORS:
+          result = RESULT_DRAW;
+          break;
+        default:
+          break;
+      }
+      break;
+
+    default:
+      break;
+  }
+
+  return result;
+};
+
 startGameBtn.addEventListener('click', function startGame() {
   if (gameIsRunning) {
     return;
@@ -43,6 +106,12 @@ startGameBtn.addEventListener('click', function startGame() {
 
   const playerSelection = getPlayerChoice();
   console.log("Player's selection is " + playerSelection);
+
   const computerSelection = getComputerChoice();
   console.log("Computer's selection is " + computerSelection);
+
+  const result = getResult(playerSelection, computerSelection);
+  console.log(result);
+
+  gameIsRunning = false;
 });
