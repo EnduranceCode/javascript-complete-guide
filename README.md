@@ -8,13 +8,17 @@ There's a folder in the root of this repository for each section of the course. 
 
 ## Coding projects
 
-### First Aapp
+### First App
 
 The folder [`first-app`](./first-app) of this repository contains the code of the first web application shown on the course.
 
 ### Basics 01
 
-The folder [`basics-01`](./basics-01) of this repository contains the code written while working through Lesson 18 ro Lesson 82 (Section 2, Section 3 and Section 4) of the course.
+The folder [`basics-01`](./basics-01) of this repository contains the code written while working through Lesson 18 to Lesson 82 (Section 2, Section 3 and Section 4) of the course.
+
+### Monster Killer
+
+The folder [`monster-killer`](./monster-killer) of this repository contains the code written while working through Lesson 83 to Lesson 110 (Section 4) of the course.
 
 ## Assignements
 
