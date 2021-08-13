@@ -105,13 +105,25 @@ startGameBtn.addEventListener('click', () => {
   console.log('Game is starting..');
 
   const playerSelection = getPlayerChoice();
-  console.log("Player's selection is " + playerSelection);
-
   const computerSelection = getComputerChoice();
-  console.log("Computer's selection is " + computerSelection);
-
   const result = getResult(playerSelection, computerSelection);
-  console.log(result);
 
+  let message = `You picked ${playerSelection}, computer picked ${computerSelection}, therefore you `;
+  switch (result) {
+    case RESULT_DRAW:
+      message = message + 'draw.';
+      break;
+    case RESULT_PLAYER_WINS:
+      message = message + 'won.';
+      break;
+    case RESULT_COMPUTER_WINS:
+      message = message + 'lost.';
+      break;
+    default:
+      break;
+  }
+
+  alert(message);
   gameIsRunning = false;
+  console.log('Game is stoped');
 });
