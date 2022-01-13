@@ -37,3 +37,7 @@ The folder [`assignment-02`](./assignment-02) of this repository contains the co
 ### Assignement 03
 
 The folder [`assignment-03`](./assignment-03) of this repository contains the code written solving the **Assignement 03** of the course: *Control Structures*.
+
+### Assignement 04
+
+The folder [`assignment-04`](./assignment-04) of this repository contains the code written solving the **Assignement 04** of the course: *More on Functions*.
