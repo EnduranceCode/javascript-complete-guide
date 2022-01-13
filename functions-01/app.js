@@ -135,37 +135,33 @@ startGameBtn.addEventListener('click', () => {
 });
 
 // Rest Operator and Functions inside Functions Code
-const sumUp = (resultHandler, ...numbers) => {
+const sumOrSubtractUp = (resultHandler, operation, ...numbers) => {
   const validateNumber = (number) => {
     return isNaN(number) ? 0 : number;
   };
 
-  let sum = 0;
-  for (const element of numbers) {
-    sum += validateNumber(element);
+  let result = 0;
+  if (operation == 'ADD') {
+    for (const element of numbers) {
+      result += validateNumber(element);
+    }
+  } else {
+    for (const element of numbers) {
+      result -= validateNumber(element);
+    }
   }
 
-  return resultHandler(sum);
+  return resultHandler(result);
 };
 
-const subtractUp = function () {
-  let subtraction = 0;
-  // The use of "arguments" is not a good practice. Do not use it!
-  for (const element of arguments) {
-    subtraction -= element;
-  }
-
-  return subtraction;
-};
-
-const showResult = (result) => {
-  alert('The result is ' + result);
+const showResult = (messageText, result) => {
+  alert(messageText + result);
 };
 
 console.log('# Rest Operator Code');
-sumUp(showResult, 1, 5, 10, -3, 6, 10);
-sumUp(showResult, 1, 5, 10, 'test', 6, 10);
-sumUp(showResult, 1, 5, 10, -3, 6, 10, 25, 88);
+sumOrSubtractUp(showResult.bind(this, 'The result after adding all is: '), 'ADD', 1, 5, 10, -3, 6, 10);
+sumOrSubtractUp(showResult.bind(this, 'The result after adding all is: '), 'ADD', 1, 5, 10, 'test', 6, 10);
+sumOrSubtractUp(showResult.bind(this, 'The result after adding all is: '), 'ADD', 1, 5, 10, -3, 6, 10, 25, 88);
 
-console.log(subtractUp(1, 5, 10, -3, 6, 10));
-console.log(subtractUp(1, 5, 10, -3, 6, 10, 25, 88));
+sumOrSubtractUp(showResult.bind(this, 'The result after subtracting is: '), 'SUBTRACT', 1, 5, 10, -3, 6, 10);
+sumOrSubtractUp(showResult.bind(this, 'The result after subtracting is: '), 'SUBTRACT', 1, 5, 10, -3, 6, 10, 25, 88);
