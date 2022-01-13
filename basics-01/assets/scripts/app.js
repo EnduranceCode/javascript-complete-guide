@@ -25,7 +25,7 @@ function writeToLog(operator, resultBeforeCalculation, userInputNumber, currentR
   console.log(logEntries);
 }
 
-function claculateResult(operator) {
+function calculateResult(operator) {
   const userInputNumber = getUserNumberInput();
 
   if ((operator !== '+' && operator !== '-' && operator !== '*' && operator !== '/') || !userInputNumber) {
@@ -47,27 +47,7 @@ function claculateResult(operator) {
   createDescriptionAndOutputResult(operator, resultBeforeCalculation, userInputNumber);
 }
 
-function add() {
-  const OPERATOR = '+';
-  claculateResult(OPERATOR);
-}
-
-function subtract() {
-  const OPERATOR = '-';
-  claculateResult(OPERATOR);
-}
-
-function multiply() {
-  const OPERATOR = '*';
-  claculateResult(OPERATOR);
-}
-
-function divide() {
-  const OPERATOR = '/';
-  claculateResult(OPERATOR);
-}
-
-addBtn.addEventListener('click', add);
-subtractBtn.addEventListener('click', subtract);
-multiplyBtn.addEventListener('click', multiply);
-divideBtn.addEventListener('click', divide);
+addBtn.addEventListener('click', calculateResult.bind(this, '+'));
+subtractBtn.addEventListener('click', calculateResult.bind(this, '-'));
+multiplyBtn.addEventListener('click', calculateResult.bind(this, '*'));
+divideBtn.addEventListener('click', calculateResult.bind(this, '/'));
